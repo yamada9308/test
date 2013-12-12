@@ -1,5 +1,5 @@
 call gradle clean build eclipse
 
-java -jar build\libs\gs-securing-web-0.1.0.jar
+java -Dfile.encoding=UTF-8 -jar build\libs\gs-securing-web-0.1.0.jar
 
 pause
