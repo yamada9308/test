@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example </title>
+    </head>
+    <body>
+        <form th:action="@{/upload}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+	        <input type="file" name="file"/>
+	        <input type="text" name="comment" placeholder="コメントを入力してください"/>
+            <input type="submit"/>
+        </form>
+
+<table>
+	<tr th:each="row : ${data}">
+		<td th:text="${row[1]}"></td>
+		<td th:text="${row[2]}"></td>
+		<td><a th:href="@{/upload}+'?id='+${row[0]}" th:text="${row[3]}"></a></td>
+	</tr>
+</table>
+
+    </body>
+</html>
